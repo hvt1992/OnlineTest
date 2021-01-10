@@ -1,0 +1,9 @@
+.background-color{
+  background-color: #d3cdbe;
+  height: 100%;
+}
+
+.navBarBottom{
+  position: relative;
+    border-bottom: 2px solid black;
+}

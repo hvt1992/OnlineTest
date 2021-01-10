@@ -1,0 +1,32 @@
+<div class="row">
+
+  <div class="col-sm-6 col-md-6 ">
+    <div class="fixedPos">
+      <strong>
+        Time Left : {{count}}:{{sec}} <span *ngIf="count == 2" style='color: red;'>2 Min Left</span>
+      </strong>
+      <br>
+      <webcam [height]="500" [width]="500"></webcam>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6 col-md-6">
+    <div *ngFor="let item of companies; let i =index" class="questionHead">
+      <strong class="question">
+        Q {{i+1}} : {{item.ques}}
+        <br />
+        &nbsp; Ans :
+      </strong>
+      <div *ngFor="let a of item.Ans; let j =index" class="question">
+        {{j+1}} : &nbsp; <input type="radio" name="{{i+1}}" (change)="handleChange(item.ques,a.result)"> &nbsp;{{a.ANS}}
+      </div>
+    </div>
+
+    <div class="text-center">
+      <br />
+      <button type="button" class="btn btn-danger btn-lg" (click)="submit()">Submit</button>
+      <br /><br />
+    </div>
+  </div>
+</div>

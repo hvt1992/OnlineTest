@@ -1,0 +1,21 @@
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: white;
+    padding-top: 12px;
+}
+
+.question {
+    padding-left: 10px;
+}
+
+.questionHead{
+    display: block;
+    border-bottom: 3px solid;
+    padding: 12px;
+}
+
+.fixedPos {
+    position: fixed;
+}
