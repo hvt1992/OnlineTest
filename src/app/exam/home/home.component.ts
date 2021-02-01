@@ -15,8 +15,9 @@ export class HomeComponent implements OnInit {
   public result :any =[]
   public companies: any = [];
   public showWebcam = true;
-  public count = 29;
+  public count = 14;
   public sec= 59;
+  public onCam = false;
   constructor(public auth : AuthService, private route : Router) { }
   
 
@@ -214,13 +215,14 @@ export class HomeComponent implements OnInit {
   submit(){
     let uniQueArray = this.getUniqueListBy(this.result ,"Question");
     let noFQuestionAttemp =  uniQueArray.length - 15;
-    
-    if(noFQuestionAttemp == 0) {
-      this.route.navigateByUrl('/Result');
-    }else {
-      noFQuestionAttemp = Math.abs(noFQuestionAttemp)
-      alert(`Please Attempted Remaining ${noFQuestionAttemp} Questions `)
-    }
+    alert('Are You sure you want to submit the test')
+    this.route.navigateByUrl('/Result')
+    // if(noFQuestionAttemp == 0) {
+    //   this.route.navigateByUrl('/Result');
+    // }else {
+    //   noFQuestionAttemp = Math.abs(noFQuestionAttemp)
+    //   alert(`Please Attempted Remaining ${noFQuestionAttemp} Questions `)
+    // }
   }
   getUniqueListBy(arr : any, key : string) {
     return [...new Map(arr.map((item: { [x: string]: any; }) => [item[key], item])).values()]
